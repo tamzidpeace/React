@@ -3,7 +3,7 @@ import React from 'react';
 const person = (props) => {
      return (
           
-          <p > {props.name} Arafat</p>
+          <p > {props.name} Arafat {props.children} </p>
      );
 };
 

@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Hi I am react app. </h1>
-        <Person className="p1" name="p1"> Kamal </Person>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <p>Hello</p>
+    </div>
+  );
 }
 
 export default App;

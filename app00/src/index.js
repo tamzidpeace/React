@@ -4,47 +4,26 @@ import './index.css';
 //import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-function formateDate(date) {
-     return date.toLocaleDateString();
-}
-
-function userInfo(props) {
-     return (
-          <div className="UserInfo">
-               
+class Clock extends React.Component {
+     constructor(props) {
+          super(props);
+          this.state = {date : new Date()};
+     }
+     render() {
+          return (
+               <div>
+              <h1>Hello, world!</h1>
+              <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
           </div>
-     );
+          );
+     }     
 }
 
-function Comment(props) {
-     console.log(props);
-     return (
-          <div className="Comment">
-          <img src={props.author.avatarUrl}
-                    alt={props.author.name}
-               />
-               <p> {props.text} </p>
-               <p> {formateDate(props.date)} </p>                             
-          </div>
-     );
+function tick() {
+     
+     ReactDOM.render( <Clock/>, 
+          document.getElementById('root'));
+     registerServiceWorker();
 }
 
-
-const comment = {
-     date: new Date(),
-     text: 'I hope you enjoy learning React',
-     author: {
-          name: 'Hello Kitty',
-          avatarUrl: 'https://placekitten.com/g/64/64',
-     },
-}
-
-
-
-ReactDOM.render( <Comment
-     date = {comment.date}
-     text = {comment.text}
-     author = {comment.author}
-     />, 
-     document.getElementById('root'));
-registerServiceWorker();
+setInterval(tick, 1000);

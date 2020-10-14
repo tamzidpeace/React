@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const person = (props) => {
-     return (
-          
-          <p > {props.name} Arafat {props.children} </p>
-          
-     );
+  return (
+    <div>
+      <p>        
+        {props.name} Arafat {props.age}
+      </p>
+      <p> {props.children} </p>
+    </div>
+  );
 };
 
 export default person;

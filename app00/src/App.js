@@ -34,6 +34,7 @@ const app = (props) => {
       <p>This is really working!</p>
       <button onClick={switchNameHandler}>Switch Name</button>
       <Person
+        click={this.switchNameHandler}
         name={personState.persons[0].name}
         age={personState.persons[0].age}
       />

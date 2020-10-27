@@ -51,25 +51,13 @@ class App extends Component {
 
     let persons = null;
 
-    if(this.state.showPsersons) {
+    if (this.state.showPsersons) {
       persons = (
         <div>
-          <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age}
-          />
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            click={this.switchNameHandler.bind(this, "Max!")}
-            changed={this.nameChangedHandler}
-          >
-            My Hobbies: Racing
-          </Person>
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age}
-          />
+          {this.state.persons.map((person) => {
+            return <Person name={person.name} age={person.age} />;
+          })}
+          
         </div>
       );
     }
@@ -82,8 +70,7 @@ class App extends Component {
           Switch Name
         </button>
 
-      {persons}
-        
+        {persons}
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));

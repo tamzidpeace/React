@@ -5,6 +5,7 @@ const useFetch = (url) => {
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
+    //delete blog item
     const handleDelete = (id) => {
         console.log(id)
         let new_data = data.filter(data => data.id !== id)

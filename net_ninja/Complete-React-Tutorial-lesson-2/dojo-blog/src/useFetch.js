@@ -1,9 +1,15 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+
+    const handleDelete = (id) => {
+        console.log(id)
+        let new_data = data.filter(data => data.id !== id)
+        setData(new_data)
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -27,7 +33,7 @@ const useFetch = (url) => {
         }, 1000);
     }, [url])
 
-    return { data, isPending, error };
+    return {data, isPending, error, handleDelete};
 }
 
 export default useFetch;

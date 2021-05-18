@@ -20,8 +20,8 @@ function App() {
                     <i className="icofont-navigation-menu"></i>
                 </button>
 
+                <Header/>
                 <Switch>
-                    <Header/>
 
                     <Route exact path="/">
                         <Hero/>
@@ -47,8 +47,8 @@ function App() {
                         <Contact/>
                     </Route>
 
-                    <Footer/>
                 </Switch>
+                <Footer/>
 
             </div>
         </Router>

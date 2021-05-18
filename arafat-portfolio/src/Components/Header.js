@@ -12,7 +12,7 @@ const Header = () => {
                     <div className="profile">
 
                         <img src={process.env.PUBLIC_URL + '/assets/img/profile-img.jpg'} alt="" className="img-fluid rounded-circle"/>
-                            <h1 className="text-light"><a href="#">Arafat Kamal</a></h1>
+                            <h1 className="text-light"><a href="#">Alex Smith</a></h1>
                             <div className="social-links mt-3 text-center">
                                 <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
                                 <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>

@@ -1,14 +1,17 @@
 const Header = () => {
+
+    const image = 'abc';
+
     return (
         <div>
-
 
             <header id="header">
                 <div className="d-flex flex-column">
 
                     <div className="profile">
-                        {/*<img src="assets/img/profile-img.jpg" alt="" className="img-fluid rounded-circle">*/}
-                            <h1 className="text-light"><a href="index.html">Alex Smith</a></h1>
+
+                        <img src={process.env.PUBLIC_URL + '/assets/img/profile-img.jpg'} alt="" className="img-fluid rounded-circle"/>
+                            <h1 className="text-light"><a href="javascript:;">Arafat Kamal</a></h1>
                             <div className="social-links mt-3 text-center">
                                 <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
                                 <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
@@ -20,7 +23,7 @@ const Header = () => {
 
                     <nav className="nav-menu">
                         <ul>
-                            <li className="active"><a href="index.html"><i className="bx bx-home"></i> <span>Home</span></a></li>
+                            <li className="active"><a href="javascript:;"><i className="bx bx-home"></i> <span>Home</span></a></li>
                             <li><a href="#about"><i className="bx bx-user"></i> <span>About</span></a></li>
                             <li><a href="#resume"><i className="bx bx-file-blank"></i> <span>Resume</span></a></li>
                             <li><a href="#portfolio"><i className="bx bx-book-content"></i> Portfolio</a></li>

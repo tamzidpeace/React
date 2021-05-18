@@ -1,6 +1,11 @@
 const Create = () => {
     return(
-        <h2>Add New Blog</h2>
+        <div>
+            <h2>Add New Blog</h2>
+
+        </div>
+
+
     )
 }
 

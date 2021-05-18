@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
 
+    const ru = {textDecoration: "none"}
 
     return (
         <div>
@@ -24,12 +25,12 @@ const Header = () => {
 
                     <nav className="nav-menu">
                         <ul>
-                            <li className="active"><Link to="/"><i className="bx bx-home"></i> <span>Home</span></Link></li>
-                            <li><Link to="/about"><i className="bx bx-user"></i> <span>About</span></Link></li>
-                            <li><Link to="/resume"><i className="bx bx-file-blank"></i> <span>Resume</span></Link></li>
-                            <li><Link to="/portfolio"><i className="bx bx-book-content"></i> Portfolio</Link></li>
-                            <li><Link to="/skills"><i className="bx bx-server"></i>Skills</Link></li>
-                            <li><Link to="/contact"><i className="bx bx-envelope"></i> Contact</Link></li>
+                            <li className="active"><Link className={ru} to="/"><i className="bx bx-home"></i> <span>Home</span></Link></li>
+                            <li><Link style={ru} to="/about"><i className="bx bx-user"></i> <span>About</span></Link></li>
+                            <li><Link style={ru} to="/resume"><i className="bx bx-file-blank"></i> <span>Resume</span></Link></li>
+                            <li><Link style={ru} to="/portfolio"><i className="bx bx-book-content"></i> Portfolio</Link></li>
+                            <li><Link style={ru} to="/skills"><i className="bx bx-server"></i>Skills</Link></li>
+                            <li><Link style={ru} to="/contact"><i className="bx bx-envelope"></i> Contact</Link></li>
 
                         </ul>
                     </nav>

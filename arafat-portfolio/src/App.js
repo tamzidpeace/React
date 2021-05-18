@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "./Components/Footer";
 import Header from './Components/Header'
+import Hero from "./Components/Hero";
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
                 <i className="icofont-navigation-menu"></i>
             </button>
             <Header/>
-
+            <Hero/>
             <Footer/>
 
         </div>

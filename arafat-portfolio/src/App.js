@@ -8,26 +8,50 @@ import Skills from "./Components/Skills";
 import Resume from "./Components/Resume";
 import Portfolio from "./Components/Portfolio";
 import Contact from "./Components/Contact";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function App() {
     return (
-        <div className="App">
+        <Router>
+            <div className="App">
 
-            {/*mobile navigation button*/}
-            <button type="button" className="mobile-nav-toggle d-xl-none">
-                <i className="icofont-navigation-menu"></i>
-            </button>
+                {/*mobile navigation button*/}
+                <button type="button" className="mobile-nav-toggle d-xl-none">
+                    <i className="icofont-navigation-menu"></i>
+                </button>
 
-            <Header/>
-            <Hero/>
-            <About/>
-            <Skills/>
-            <Resume/>
-            <Portfolio/>
-            <Contact/>
-            <Footer/>
+                <Switch>
+                    <Header/>
 
-        </div>
+                    <Route exact path="/">
+                        <Hero/>
+                    </Route>
+
+                    <Route exact path="/about">
+                        <About/>
+                    </Route>
+
+                    <Route exact path="/skills">
+                        <Skills/>
+                    </Route>
+
+                    <Route exact path="/resume">
+                        <Resume/>
+                    </Route>
+
+                    <Route exact path="/portfolio">
+                        <Portfolio/>
+                    </Route>
+
+                    <Route exact path="/contact">
+                        <Contact/>
+                    </Route>
+
+                    <Footer/>
+                </Switch>
+
+            </div>
+        </Router>
     );
 }
 

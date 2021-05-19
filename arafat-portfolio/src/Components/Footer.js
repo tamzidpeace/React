@@ -4,11 +4,8 @@ const Footer = () => {
 
             <footer id="footer">
                 <div className="container">
-                    <div className="copyright">
-                        &copy; Copyright <strong><span>iPortfolio</span></strong>
-                    </div>
                     <div className="credits">
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        <a target="_blank" style={{textDecoration: 'none', fontWeight: 'bold'}} href="https://github.com/tamzidpeace">tamzidpeace</a>
                     </div>
                 </div>
             </footer>

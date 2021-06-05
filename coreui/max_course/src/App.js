@@ -1,10 +1,21 @@
 import './App.css';
+import Person from "./Person/Person";
+import Person2 from "./Person/Person2";
 
 function App() {
+
+    const clickEvent  = () => {
+        console.log(123)
+    }
+
+
+
     return (
         <div className="App">
             <header className="App-header">
-               <h1>Hello React</h1>
+                {/*<Person name="arafat"/>*/}
+                <Person2 click={clickEvent}/>
+
             </header>
         </div>
     );

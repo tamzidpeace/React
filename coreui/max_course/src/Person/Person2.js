@@ -9,6 +9,8 @@ class Person2 extends React.Component {
             {name: 'bob', age: 40},
         ],
         m_name: 'arafat',
+        mName: 'rakib',
+        mClass: 's1',
     }
 
     myClick = () => {
@@ -29,6 +31,14 @@ class Person2 extends React.Component {
     }
 
 
+     foo2 = () => {
+        this.setState({
+            mName: 'sakib',
+            mClass: 's2'
+        })
+    }
+
+
     render() {
 
         let foo1 = (name) => {
@@ -44,23 +54,18 @@ class Person2 extends React.Component {
             </div>)
         }
 
-        let mName = 'rakib';
-        let foo2 = () => {
-            this.setState({
-                mName: 'sakib',
-            })
-        }
 
         return (
             <div>
-                <p onClick={this.props.click}>{this.state.m_name}</p>
+                {/*<p onClick={this.props.click}>{this.state.m_name}</p>
                 <input type="text" onChange={this.getName}/>
                 <br/>
                 {m_person}
                 <button onClick={() => foo1('james')} type="button">foo1</button>
-                <br/>
-                <button onClick={() => foo2()} type="button">change color</button> <br/>
-                {mName}
+                <br/>*/}
+                <button onClick={this.foo2} type="button">change color</button> <br/>
+                <p className={this.state.mClass}> {this.state.mName} </p>
+
             </div>
         );
     }

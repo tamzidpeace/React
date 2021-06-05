@@ -1,5 +1,4 @@
 import './App.css';
-import Person from "./Person/Person";
 import Person2 from "./Person/Person2";
 
 function App() {

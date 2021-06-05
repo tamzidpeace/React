@@ -1,4 +1,5 @@
-import React  from "react";
+import React from "react";
+import './Person.css'
 
 class Person2 extends React.Component {
 
@@ -7,7 +8,7 @@ class Person2 extends React.Component {
             {name: 'max', age: 28},
             {name: 'bob', age: 40},
         ],
-        m_name : 'arafat',
+        m_name: 'arafat',
     }
 
     myClick = () => {
@@ -21,12 +22,11 @@ class Person2 extends React.Component {
     }
 
 
-     getName = (event) => {
-         this.setState ( {
+    getName = (event) => {
+        this.setState({
             m_name: event.target.value
-         })
+        })
     }
-
 
 
     render() {
@@ -37,15 +37,31 @@ class Person2 extends React.Component {
             this.setState({showPerson: !does_show})
         }
 
-        return(
-           <div>
-               {this.state.showPerson === true ?  <p>1</p> :
-                        <p style={{color: "red"}} onClick={this.props.click}>{this.state.m_name}</p>
-               }
-               <input type="text" onChange={this.getName}/>
-               <br/>
-               <button onClick={() => foo1('james')} type="button">foo1</button>
-           </div>
+        let m_person = null;
+        if (this.state.showPerson) {
+            m_person = (<div>
+                {this.state.persons.map(person => {return person.name})}
+            </div>)
+        }
+
+        let mName = 'rakib';
+        let foo2 = () => {
+            this.setState({
+                mName: 'sakib',
+            })
+        }
+
+        return (
+            <div>
+                <p onClick={this.props.click}>{this.state.m_name}</p>
+                <input type="text" onChange={this.getName}/>
+                <br/>
+                {m_person}
+                <button onClick={() => foo1('james')} type="button">foo1</button>
+                <br/>
+                <button onClick={() => foo2()} type="button">change color</button> <br/>
+                {mName}
+            </div>
         );
     }
 }

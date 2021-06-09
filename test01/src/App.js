@@ -1,6 +1,8 @@
 import './App.css';
 import Employee from "./Employee";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import Button from "@material-ui/core/Button";
+import axios from 'axios';
 
 function App() {
 
@@ -19,16 +21,35 @@ function App() {
 
     const guns = ['ak', 'm416', 'm16a4'];
 
+    const [name, setName] = useState([])
+
+    useEffect(() =>{
+        axios.get(`https://jsonplaceholder.typicode.com/users/`)
+            .then(res => {
+                const persons = res.data;
+                // persons.map(person => {
+                //     console.log(person.name)
+                // })
+                //setName(persons)
+                setName(persons)
+            })
+    })
+
+
     return (
+
+
+
         <div className="App">
             <header className="App-header">
-                <h1>Company Directory</h1>
-                {employeeInfo.map((employee) => {
-                   return <Employee {...employee} />
+
+
+
+                {name && name.map(n => {
+                    const {id, name} = n
+                    return(<div key={id}>{name}</div>)
                 })}
 
-
-                {guns.map(gun => (<p>{gun}</p>))}
 
             </header>
 

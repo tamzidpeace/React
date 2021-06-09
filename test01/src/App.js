@@ -17,6 +17,7 @@ function App() {
         }
     ]
 
+    const guns = ['ak', 'm416', 'm16a4'];
 
     return (
         <div className="App">
@@ -25,7 +26,13 @@ function App() {
                 {employeeInfo.map((employee) => {
                    return <Employee {...employee} />
                 })}
+
+
+                {guns.map(gun => (<p>{gun}</p>))}
+
             </header>
+
+
         </div>
     );
 }

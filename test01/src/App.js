@@ -1,33 +1,33 @@
+import React from "react";
 import './App.css';
-import Employee from "./Employee";
-import React, {useEffect, useState} from "react";
-// import Button from "@material-ui/core/Button";
-import axios from 'axios';
-import Dashboard from "./dashboard/Dashboard";
-import SignIn from "./Signin/SignIn";
-import SignInSide from "./Signin/SignInSide";
-import Todos from "./todo/Todos";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import Todo from "./todo/todo";
+import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
 
+export default function App() {
 
     return (
+        <React.Fragment>
 
-        <div className="App">
+            <div style={{textAlign: 'center',}}>
+                <h1>Redux Made Easy</h1>
 
-            <Router>
+                <div className="count">
 
-                <Switch>
-                    <Route exact path="/" children={<Todos/>}/>
-                    <Route path="/:id" children={<Todo/>}/>
-                </Switch>
+                    <h3>Count : 0</h3>
 
-            </Router>
+                    <div className="mt-5">
+                        <button className="btn btn-primary mr-2">
+                            <i className="fas fa-plus"/>
+                        </button>
+                        <button className="btn btn-primary mr-2">
+                            <i className="fas fa-minus"/>
+                        </button>
+                    </div>
+                </div>
 
-        </div>
+            </div>
+
+        </React.Fragment>
     );
 }
 
-export default App;

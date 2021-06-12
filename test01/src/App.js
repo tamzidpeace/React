@@ -9,8 +9,6 @@ export default function App() {
 
             <Counter/>
 
-            <Counter2/>
-
         </React.Fragment>
     );
 }

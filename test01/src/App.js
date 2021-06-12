@@ -1,33 +1,15 @@
-import './App.css';
-import Employee from "./Employee";
-import React, {useEffect, useState} from "react";
-// import Button from "@material-ui/core/Button";
-import axios from 'axios';
-import Dashboard from "./dashboard/Dashboard";
-import SignIn from "./Signin/SignIn";
-import SignInSide from "./Signin/SignInSide";
-import Todos from "./todo/Todos";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import Todo from "./todo/todo";
+import React from "react";
+import Counter from "./counter/counter.jsx";
+import Counter2 from "./counter/counter2";
 
-function App() {
-
+export default function App() {
 
     return (
+        <React.Fragment>
 
-        <div className="App">
+            <Counter/>
 
-            <Router>
-
-                <Switch>
-                    <Route exact path="/" children={<Todos/>}/>
-                    <Route path="/:id" children={<Todo/>}/>
-                </Switch>
-
-            </Router>
-
-        </div>
+        </React.Fragment>
     );
 }
 
-export default App;

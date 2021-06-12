@@ -26,7 +26,7 @@ export default function Todos() {
             {todos? (
                 <div>
                     <h3>Data</h3>
-                    { {todos} && <div>{todos.map((todo) => (<TodoCard todo={todo}/>))}</div>}
+                    { {todos} && <div>{todos.map((todo) => (<TodoCard todo={todo }/>))}</div>}
                 </div>
             ) : <CircularProgress/>}
 

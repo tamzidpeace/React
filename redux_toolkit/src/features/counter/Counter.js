@@ -12,7 +12,7 @@ export function Counter() {
                 <h1>Vote: {count}</h1>
                 <button onClick={() => dispatch(decrement())}>Decrement</button>
                 <button onClick={() => dispatch(increment())}>Increment</button>
-                <button onClick={() => dispatch(incrementByAmount(10 ))}>IncrementBy</button>
+                <button onClick={() => dispatch(incrementByAmount({add: 10}))}>IncrementBy</button>
             </div>
         </div>
     )

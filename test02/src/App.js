@@ -8,6 +8,7 @@ function App() {
         <div className="container App">
 
             <Login/>
+
             <Profile/>
 
         </div>

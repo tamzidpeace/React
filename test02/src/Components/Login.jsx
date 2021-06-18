@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import {TestContext} from "../Contexts/TestContext";
 
 function Login(props) {
 
@@ -9,7 +10,10 @@ function Login(props) {
         let email = event.target.value;
         setEmail(email);
         console.log(email);
+        console.log('context ' + name);
     }
+
+    const {name} = useContext(TestContext);
 
     return (
         <div className="p-5">

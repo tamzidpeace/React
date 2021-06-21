@@ -1,14 +1,14 @@
-
 import './App.css';
+import Contacts from "./Components/Contacts";
 
 function App() {
-  return (
-    <div className="App">
+    return (
+        <div className="App">
 
+        <Contacts/>
 
-
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;

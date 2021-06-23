@@ -1,8 +1,29 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import Contact from "./Contact";
 import "bootstrap/dist/css/bootstrap.css"
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
+const initialState = {count: 0, name: '', phone: ''};
+
+function ContactReducer(state, action) {
+    switch (action.type) {
+        case 'increment':
+            return {count: state.count + 1};
+        case 'decrement':
+            return {count: state.count - 1}
+        case 'handleNameChange':
+            console.log('name change');
+            return 123;
+        case 'handlePhoneChange':
+            console.log(event.target.value);
+            return 321;
+
+        default:
+            throw new Error();
+    }
+}
 
 function Contacts(props) {
 
@@ -16,27 +37,8 @@ function Contacts(props) {
         setIsOpen(false);
     };
 
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [state, dispatch] = useReducer(ContactReducer, initialState);
 
-    const handleNameChange = (event) =>{
-        //console.log(event.target.value);
-        setName(event.target.value);
-
-    }
-
-    const handlePhoneChange =(event) =>{
-        //console.log(event.target.value);
-        setPhone(event.target.value);
-    }
-
-    const saveContact = () => {
-        hideModal();
-        let data = {'name': name, 'phone': phone};
-
-        cnts = [data , ...cnts];
-        setContact(cnts);
-    }
 
     let cnts = [
         {'name': 'arafat', 'phone': 1234},
@@ -83,15 +85,15 @@ function Contacts(props) {
                     <Modal.Body>
 
                         <label>Name</label>
-                        <input type="text" name="name" value={name} onChange={handleNameChange} className="form-control"/>
+                        <input type="text" name="name" value={state.name} onChange={() => dispatch({type: 'handleNameChange'})} className="form-control"/>
 
                         <label>Phone Number</label>
-                        <input type="number" name="phone" value={phone} onChange={handlePhoneChange} className="form-control"/>
+                        <input type="number" name="phone" value={state.phone} onChange={() => dispatch({type: 'handlePhoneChange'})} className="form-control"/>
 
                     </Modal.Body>
                     <Modal.Footer>
                         <button className="btn btn-dark" onClick={hideModal}>Cancel</button>
-                        <button className="btn btn-primary" onClick={saveContact}>Save</button>
+                        <button className="btn btn-primary">Save</button>
                     </Modal.Footer>
                 </Modal>
             </>

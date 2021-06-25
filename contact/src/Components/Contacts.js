@@ -3,29 +3,13 @@ import Contact from "./Contact";
 import "bootstrap/dist/css/bootstrap.css"
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {ContactReducer} from '../Reducer/ContactReducer';
 
 
-const initialState = {count: 0, name: '', phone: ''};
 
-function ContactReducer(state, action) {
-    switch (action.type) {
-        case 'increment':
-            return {count: state.count + 1};
-        case 'decrement':
-            return {count: state.count - 1}
-        case 'handleNameChange':
-            console.log('name change');
-            return 123;
-        case 'handlePhoneChange':
-            console.log(event.target.value);
-            return 321;
-
-        default:
-            throw new Error();
-    }
-}
 
 function Contacts(props) {
+
 
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -36,6 +20,8 @@ function Contacts(props) {
     const hideModal = () => {
         setIsOpen(false);
     };
+
+    const initialState = {count: 0, name: '', phone: ''};
 
     const [state, dispatch] = useReducer(ContactReducer, initialState);
 
@@ -60,7 +46,8 @@ function Contacts(props) {
 
                             <div className="float-end mb-2">
                                 <button className="btn btn-primary" onClick={showModal}>
-                                    Add New <i className="fas fa-plus-circle"/>
+                                    Add New 
+                                    {/* <i className="fas fa-plus-circle"/> */}
                                 </button>
                             </div>
 

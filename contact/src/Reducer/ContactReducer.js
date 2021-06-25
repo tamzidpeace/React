@@ -1,6 +1,4 @@
-const initialState = {count: 0};
-
-function ContactReducer(state, action) {
+export function ContactReducer(state, action) {
     switch (action.type) {
         case 'increment':
             return {count: state.count + 1};
@@ -11,4 +9,3 @@ function ContactReducer(state, action) {
     }
 }
 
-export default ContactReducer();

@@ -6,8 +6,8 @@ function Contact(props) {
             <div>{props.name}</div>
             <div>{props.pone}</div>
             <div>
-                <i className="mx-2 fas fa-edit text-info"/>
-                <i className="fas fa-trash text-danger"/>
+                {/* <i className="mx-2 fas fa-edit text-info"/>
+                <i className="fas fa-trash text-danger"/> */}
             </div>
         </div>
     );
